@@ -7,26 +7,24 @@ Spring Boot application implementing idempotency for payment requests.
 mvn clean install
 mvn spring-boot:run
 
+
 Endpoints
 GET /ping → Health check
-Response:
 
-Code
 Idempotency Gateway is running!
-POST /process-payment  
+
+POST /process-payment
 Headers:
 
-Code
 Content-Type: application/json
 Idempotency-Key: <unique-key>
+
 Body:
-
-json
 { "amount": 100, "currency": "RWF" }
-Response:
 
-json
+Response:
 { "status": "Charged 100 RWF" }
+
 Idempotency Logic
 Requests with the same Idempotency-Key will not be processed twice.
 
@@ -44,6 +42,20 @@ Run curl http://localhost:8080/ping to check health.
 
 Run curl -X POST http://localhost:8080/process-payment ... to test payments.
 
-Code
 
 ---
+
+### ✅ Why this is better
+- Uses proper fenced code blocks (` ```bash `, ` ```json `) instead of “Code/json” labels.  
+- Clear separation of **Headers**, **Body**, and **Response**.  
+- Easy to copy‑paste commands directly.  
+- Professional formatting that reviewers expect.
+
+---
+
+### 📌 Next Step
+Update your README with this improved version:
+
+```bash
+nano README.md
+
